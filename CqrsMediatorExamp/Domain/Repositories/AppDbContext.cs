@@ -1,7 +1,7 @@
-using CQRSMediatR.Domain.Models;
+using CqrsMediatorExamp.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CQRSMediatR.Domain.Repositories
+namespace CqrsMediatorExamp.Domain.Repositories
 {
     public class AppDbContext : DbContext
     {

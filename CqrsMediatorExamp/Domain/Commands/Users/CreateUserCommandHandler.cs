@@ -1,10 +1,10 @@
 using System.Threading;
 using System.Threading.Tasks;
-using CQRSMediatR.Domain.Models;
-using CQRSMediatR.Domain.Repositories;
+using CqrsMediatorExamp.Domain.Models;
+using CqrsMediatorExamp.Domain.Repositories;
 using MediatR;
 
-namespace CQRSMediatR.Domain.Commands.Users
+namespace CqrsMediatorExamp.Domain.Commands.Users
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, User>
     {

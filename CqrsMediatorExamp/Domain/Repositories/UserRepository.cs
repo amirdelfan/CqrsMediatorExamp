@@ -1,6 +1,6 @@
-using CQRSMediatR.Domain.Models;
+using CqrsMediatorExamp.Domain.Models;
 
-namespace CQRSMediatR.Domain.Repositories
+namespace CqrsMediatorExamp.Domain.Repositories
 {
     public class UserRepository : Repository<User>, IUserRepository
     {

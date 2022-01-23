@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CQRSMediatR.Domain.Repositories
+namespace CqrsMediatorExamp.Domain.Repositories
 {
     public interface IRepository<T> where T : class
     {

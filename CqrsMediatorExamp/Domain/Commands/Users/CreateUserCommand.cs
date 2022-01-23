@@ -1,7 +1,7 @@
-using CQRSMediatR.Domain.Models;
+using CqrsMediatorExamp.Domain.Models;
 using MediatR;
 
-namespace CQRSMediatR.Domain.Commands.Users
+namespace CqrsMediatorExamp.Domain.Commands.Users
 {
     public class CreateUserCommand : IRequest<User>
     {

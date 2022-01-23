@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace CQRSMediatR.Domain.Repositories
+namespace CqrsMediatorExamp.Domain.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {

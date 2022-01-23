@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CQRSMediatR.Domain.Models;
+using CqrsMediatorExamp.Domain.Models;
 
-namespace CQRSMediatR.Domain.Repositories
+namespace CqrsMediatorExamp.Domain.Repositories
 {
     public interface IUserRepository : IRepository<User>
     {

@@ -1,4 +1,4 @@
-namespace CQRSMediatR.Domain.Communication
+namespace CqrsMediatorExamp.Domain.Communication
 {
     public class Response<T>
     {

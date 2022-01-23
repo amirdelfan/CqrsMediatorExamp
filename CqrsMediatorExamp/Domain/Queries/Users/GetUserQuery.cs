@@ -1,7 +1,7 @@
-using CQRSMediatR.Domain.Models;
+using CqrsMediatorExamp.Domain.Models;
 using MediatR;
 
-namespace CQRSMediatR.Domain.Queries.Users
+namespace CqrsMediatorExamp.Domain.Queries.Users
 {
     public class GetUserQuery : IRequest<User>
     {

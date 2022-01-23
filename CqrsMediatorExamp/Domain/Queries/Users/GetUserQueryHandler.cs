@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using CQRSMediatR.Domain.Models;
-using CQRSMediatR.Domain.Repositories;
+using CqrsMediatorExamp.Domain.Models;
+using CqrsMediatorExamp.Domain.Repositories;
 using MediatR;
 
-namespace CQRSMediatR.Domain.Queries.Users
+namespace CqrsMediatorExamp.Domain.Queries.Users
 {
     public class GetUserQueryHandler : IRequestHandler<GetUserQuery, User>
     {

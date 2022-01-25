@@ -32,7 +32,7 @@ namespace CqrsMediatorExamp.Tests.Queries
         public async Task GetExistingUserAsync()
         {
             var handler = new GetUserQueryHandler(this.mockUserRepository.Object);
-            User result = await handler.Handle(new GetUserQuery(1), new System.Threading.CancellationToken());
+            var result = await handler.Handle(new GetUserQuery(1), new System.Threading.CancellationToken());
             Assert.NotNull(result);
         }
     }

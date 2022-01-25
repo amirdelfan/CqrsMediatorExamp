@@ -1,10 +1,9 @@
-using System.Collections.Generic;
-using CqrsMediatorExamp.Domain.Models;
+using CqrsMediatorExamp.Domain.Queries.Dto;
 using MediatR;
 
 namespace CqrsMediatorExamp.Domain.Queries.Users
 {
-    public class ListUsersQuery : IRequest<IEnumerable<User>>
+    public class ListUsersQuery : IRequest<IEnumerable<ListUserDto>>
     {
     }
 }

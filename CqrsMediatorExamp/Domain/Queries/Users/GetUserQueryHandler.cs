@@ -1,10 +1,10 @@
-using CqrsMediatorExamp.Domain.Models;
+using CqrsMediatorExamp.Domain.Queries.Dto;
 using CqrsMediatorExamp.Domain.Repositories;
 using MediatR;
 
 namespace CqrsMediatorExamp.Domain.Queries.Users
 {
-    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, User>
+    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, GetUserDto>
     {
         private readonly IUserRepository _userRepository;
 
@@ -13,14 +13,21 @@ namespace CqrsMediatorExamp.Domain.Queries.Users
             _userRepository = userRepository;
         }
 
-        public async Task<User> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public async Task<GetUserDto> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
             if (request.UserId <= 0)
             {
                 throw new ArgumentException(nameof(request.UserId));
             }
 
-            return await _userRepository.FindByIdAsync(request.UserId);
+            var user = await _userRepository.FindByIdAsync(request.UserId);
+
+            return new GetUserDto()
+            {
+                Id = user.Id,
+                Age = user.Age,
+                Name = user.Name
+            };
         }
     }
 }

@@ -4,6 +4,7 @@ using CqrsMediatorExamp.Controllers.Resources;
 using CqrsMediatorExamp.Domain.Commands.Users;
 using CqrsMediatorExamp.Domain.Communication;
 using CqrsMediatorExamp.Domain.Models;
+using CqrsMediatorExamp.Domain.Queries.Dto;
 using CqrsMediatorExamp.Domain.Queries.Users;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,7 @@ namespace CqrsMediatorExamp.Controllers
         /// </summary>
         /// <returns>List of users.</returns>
         [HttpGet]
-        public async Task<IEnumerable<User>> ListAsync()
+        public async Task<IEnumerable<ListUserDto>> ListAsync()
         {
             return await _mediator.Send(new ListUsersQuery());
         }

@@ -1,11 +1,10 @@
-using System.Collections.Generic;
-using CqrsMediatorExamp.Domain.Models;
+using CqrsMediatorExamp.Domain.Queries.Dto;
 using CqrsMediatorExamp.Domain.Repositories;
 using MediatR;
 
 namespace CqrsMediatorExamp.Domain.Queries.Users
 {
-    public class ListUsersQueryHandler : IRequestHandler<ListUsersQuery, IEnumerable<User>>
+    public class ListUsersQueryHandler : IRequestHandler<ListUsersQuery, IEnumerable<ListUserDto>>
     {
         private readonly IUserRepository _userRepository;
 
@@ -14,9 +13,15 @@ namespace CqrsMediatorExamp.Domain.Queries.Users
             _userRepository = userRepository;
         }
 
-        public async Task<IEnumerable<User>> Handle(ListUsersQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<ListUserDto>> Handle(ListUsersQuery request, CancellationToken cancellationToken)
         {
-            return await _userRepository.ListAsync();
+            var users = await _userRepository.ListAsync();
+            var result = new List<ListUserDto>();
+            foreach (var user in users)
+            {
+                result.Add(new ListUserDto() { Id = user.Id, Name = user.Name });
+            }
+            return result;
         }
     }
 }

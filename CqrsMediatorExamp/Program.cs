@@ -4,6 +4,7 @@ using MediatR;
 using CqrsMediatorExamp.Domain.Commands.Users;
 using System.Reflection;
 using CqrsMediatorExamp.Helpers;
+using MediatR.Extensions.FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,12 +21,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+var domainAssembly = typeof(CreateUserCommand).GetTypeInfo().Assembly;
 // Initialization of Commands and Queries in assemblies
-builder.Services.AddMediatR(typeof(CreateUserCommand).GetTypeInfo().Assembly);
+builder.Services.AddMediatR(domainAssembly);
 
 // Add logging
 builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddFluentValidation(new[] { domainAssembly });
 
 builder.Logging.AddEventLog(eventLogSettings =>
 {

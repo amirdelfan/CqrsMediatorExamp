@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsMediatorExamp", "CqrsMediatorExamp\CqrsMediatorExamp.csproj", "{768A0442-75E0-4190-BA9C-B1BE72285F5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsMediatorExamp", "CqrsMediatorExamp\CqrsMediatorExamp.csproj", "{768A0442-75E0-4190-BA9C-B1BE72285F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsMediatorExamp.Tests", "CqrsMediatorExamp.Tests\CqrsMediatorExamp.Tests.csproj", "{F762299A-52E1-4C05-978C-B039B00D2771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{768A0442-75E0-4190-BA9C-B1BE72285F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{768A0442-75E0-4190-BA9C-B1BE72285F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{768A0442-75E0-4190-BA9C-B1BE72285F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F762299A-52E1-4C05-978C-B039B00D2771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F762299A-52E1-4C05-978C-B039B00D2771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F762299A-52E1-4C05-978C-B039B00D2771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F762299A-52E1-4C05-978C-B039B00D2771}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 using CqrsMediatorExamp.Domain.Queries.Dto;
 using CqrsMediatorExamp.Domain.Repositories;
+using CqrsMediatorExamp.Exceptions;
 using MediatR;
 
 namespace CqrsMediatorExamp.Domain.Queries.Users
@@ -15,6 +16,7 @@ namespace CqrsMediatorExamp.Domain.Queries.Users
 
         public async Task<IEnumerable<ListUserDto>> Handle(ListUsersQuery request, CancellationToken cancellationToken)
         {
+            //throw new CommandInvalidException("I can't do this");
             var users = await _userRepository.ListAsync();
             var result = new List<ListUserDto>();
             foreach (var user in users)

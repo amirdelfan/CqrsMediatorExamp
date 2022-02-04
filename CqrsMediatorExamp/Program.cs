@@ -5,6 +5,7 @@ using CqrsMediatorExamp.Domain.Commands.Users;
 using System.Reflection;
 using CqrsMediatorExamp.Helpers;
 using MediatR.Extensions.FluentValidation.AspNetCore;
+using MediatR.Pipeline;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,9 @@ builder.Services.AddMediatR(domainAssembly);
 // Add logging
 builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
 builder.Services.AddHttpContextAccessor();
+
+//Error handling
+builder.Services.AddTransient(typeof(IRequestExceptionHandler<,,>), typeof(RequestGenericExceptionHandler<,,>));
 
 builder.Services.AddFluentValidation(new[] { domainAssembly });
 
